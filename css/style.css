@@ -1,0 +1,621 @@
+:root{
+    --black: #081225;
+    --white: #fff;
+    --box-1: #E6EEFF;
+    --box-2: #ffefe7;
+    --box-3: #d2d4ff;
+    --gery: #c6bdba;
+    --light-grey: #f3f3f4;
+    --time-box: #f0f5ff;
+    --podcast-i: #e5edff;
+    --dark-grey: #6f777e;
+    --light-blue: #f0f5ff;
+    --transition-1: 0.3s ease;
+    --transition-2: 0.4s ease;
+}
+
+*::before ,
+*::after ,
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul ,
+li{
+    list-style: none;
+}
+body{
+    font-family: "Inter" ,sans-serif;
+    /* color: #e1491f; */
+    background-color: var(--light-grey);
+}
+.container{
+    max-width: 1457px;
+    width: 100%;
+    margin: 0 auto;
+}
+canvas{
+    width: 100%;
+    height: 100%;
+}
+
+/* Strat Header */
+.top-area{
+    background-color: var(--black);
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 10px 10px;
+
+}
+header{
+    padding: 10px;
+}
+header .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 10px;
+}
+header .content .logo a{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #081225;
+    color: #fff;
+    user-select: none;
+}
+header .content .logo a i{
+    font-size: 21px;
+}
+header .content .controlls,
+header .content .controlls .profile,
+header .content .controlls .profile .pro-info,
+.container .main .chart-box .header .time-menu ,
+header .content .menu{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
+}
+header .content .menu .link a{
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: 500;
+    color: var(--dark-grey);
+    position: relative;
+    transition: var(--transition-1);
+}
+.static .box .items .item::before,
+header .content .menu .link.active a::before,
+header .content .menu .link a:hover::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #6f777e;
+    transition: var(--transition-1);
+}
+header .content .menu .link.active a,
+header .content .menu .link a:hover{
+    color: #3a3afe;
+}
+header .content .menu .link.active a::before,
+header .content .menu .link a:hover::before{
+    background-color: #3a3afe;
+}
+header .content .controlls .icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #6f777e7a;
+    color: var(--white);
+    transition: var(--transition-1);
+}
+header .content .controlls .icon:hover{
+    opacity: 0.7;
+    color: var(--light-grey);
+}
+header .content .controlls .profile{
+    width: 300px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #6f777e7a;
+    gap: 10px;
+    margin-left: 10px;
+    transition: var(--transition-1);
+}
+header .content .controlls .profile img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+header .content .controlls .profile .pro-info{
+    width: 100%;
+    justify-content: space-between;
+}
+header .content .controlls .profile .pro-info .name{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--light-grey);
+}
+header .content .controlls .profile .pro-info .study-position{
+    font-size: 13px;
+    margin-top: -3px;
+    color: #6f777e;
+}
+header .content .controlls .profile .pro-info >span{
+    color: #6f777e;
+    padding: 3px 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+header .content .controlls .profile .pro-info >span:hover{
+    color: var(--light-grey);
+}
+/* Start Static */
+.static{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    grid-template-columns: repeat(4 ,24%);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.static .box{
+    width: 24%;
+    padding: 15px;
+    border-radius: 10px;
+}
+.static .box:nth-child(1){
+    background-color: var(--box-1);
+    box-shadow: 2px 3px 12px #e6eeff61;
+}
+.static .box:nth-child(2){
+    background-color: var(--box-2);
+    box-shadow: 2px 3px 10px #ffefe761;
+}
+.static .box:nth-child(3){
+    background-color: var(--box-3);
+    box-shadow: 2px 3px 10px #d2d4ff61;
+}
+.static .box:nth-child(4){
+    background-color: transparent;
+    box-shadow: none;
+}
+.container .main .component .item-box .enroll ,
+.container .main .component .item-box .head,
+.static .box .head{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.container .main .component .item-box .head .title,
+.static .box .head .title{
+    font-size: 17px;
+    color: var(--black);
+    font-weight: 600;
+    white-space: nowrap;
+}
+.static .box:nth-child(4) .head .title{
+    color: var(--light-grey);
+}
+.static .box .head .icon{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 17px;
+    box-shadow: 0 0 7px rgb(13 ,13 ,13 ,0.32);
+    transition: var(--transition-1);
+}
+.static .box:nth-child(4) .head .icon{
+    background-color: var(--white);
+    box-shadow: 0 0 7px rgb(255 ,255 ,255 ,0.32);
+    color: #8209c4;
+    font-size: 19px;
+}
+.static .box .items{
+    margin-block: 10px;
+}
+.static .box .items .item{
+    padding-left: 15px;
+    font-size: 14px;
+    color: var(--black);
+    font-weight: 500;
+    position: relative;
+}
+.static .box .items .item::before{
+    background-color: var(--black);
+    left: 0;
+}
+.static .box .progress{
+    width: 100%;
+    position: relative;
+    margin-top: 43px;
+}
+.static .box .progress .value{
+    position: absolute;
+    top: -23px;
+    right: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+.static .box .progress .bar{
+    width: 100%;
+    height: 6px;
+    background-color: var(--gery);
+    position: relative;
+    transition: var(--transition-1);
+}
+.static .box .progress .bar .thumb{
+    position: absolute;
+    height: 100%;
+    background-color: var(--black);
+    transition: 0.2s ease-in;
+}
+.static .box:nth-child(1) .progress .bar .thumb{
+    width: 87%;
+}
+.static .box:nth-child(2) .progress .bar .thumb{
+    width: 48%;
+}
+.static .box:nth-child(3) .progress .bar .thumb{
+    width: 73%;
+}
+.box #ctx{
+    margin-top: 5px;
+}
+
+/* / Start Main / */
+.container .main{
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+.container .main .chart-box ,
+.container .main .component{
+    width: 50%;
+}
+.container .main .component .item-box ,
+.container .main .chart-box{
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 1px 3px 10px rgb(13 ,13 ,13 ,0.1);
+}
+.container .main .chart-box .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.main .chart-box .main-progress .progress-top .avrage .av-value,
+.container .main .chart-box .header h2{
+    font-size: 23px;
+    color: var(--black);
+    font-weight: bold;
+}
+.container .main .chart-box .header .time-menu{
+    background-color: var(--light-grey);
+    padding: 2px 5px;
+    border-radius: 30px;
+    gap: 15px;
+}
+.main .chart-box .header .time-menu .time-link{
+    background-color: var(--white);
+    padding: 5px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+.container .main .component .item-box .head .design:hover,
+.main .chart-box .header .time-menu .time-link:hover{
+    background-color: #d8d9f9c7;
+}
+.main .chart-box .header .time-menu .time-link a{
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+}
+.main .chart-box .main-progress .progress-top{
+    display: flex;
+    margin-top: 7px;
+}
+.main .chart-box .main-progress .progress-top .avrage{
+    padding: 0 10px;
+    position: relative;
+}
+.main .chart-box .main-progress .progress-top .avrage:nth-child(2){
+    padding-left: 20px;
+    margin-left: 5px;
+}
+.main .chart-box .main-progress .progress-top .avrage:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 90%;
+    background-color: #dadde0;
+}
+.main .chart-box .main-progress .progress-top .avrage .av-name{
+    color: var(--gery);
+    font-size: 13px;
+    font-weight: 400;
+}
+.main .chart-box .main-progress .progress-down{
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+}
+
+/* Start Componnet */
+.container .main .component{
+    display: flex;
+    gap: 10px;
+}
+
+.container .main .component .item-box{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* .container .main .component .item-box{
+} */
+.container .main .component .item-box .head .design{
+    background-color: #6f777e4f;
+    padding: 4px 10px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: var(--transition-1);
+}
+.container .main .component .item-box .head .more{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 10px;
+}
+.container .main .component .item-box .audio-course{
+    margin-block: 20px;
+}
+.container .main .component .item-box .audio-course img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 15px;
+}
+.container .main .component .item-box .details{
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+.container .main .component .item-box .details p{
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+.container .main .component .item-box .details .icon{
+    width: 45px;
+    height: 40px;
+    background-color: var(--box-3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 6px;
+    color: var(--black);
+}
+.container .main .component .item-box .audio-course p{
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--black);
+}
+.container .main .component .item-box .enroll .imgs img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--box-3);
+    margin-right: -15px;
+}
+.container .main .component .item-box .enroll button{
+    width: 100px;
+    padding: 1px 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+    color: var(--white);
+    font-size: 14px;
+    transition: var(--transition-2);
+}
+.container .main .component .item-box .enroll button:hover{
+    opacity: 0.8;
+}
+
+/* ////////*\\\\\\\\\\ */
+.container .main .component .item-box .calender{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    margin-top: 20px;
+}
+.container .main .component .item-box .calender .col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container .main .component .item-box .calender .col .day-name,
+.container .main .component .item-box .calender .col .day{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+.container .main .component .item-box .calender .col .day{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+    border-radius: 50%;
+    user-select: none;
+}
+.container .main .component .item-box .calender .col .day:hover,
+.container .main .component .item-box .calender .col .day.active{
+    background-color: var(--black);
+    color: var(--white);
+}
+.container .main .component .item-box .time-table{
+    margin-top: 20px;
+    padding: 5px;
+}
+.container .main .component .item-box .time-table .row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: var(--light-blue);
+    padding: 10px 13px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: var(--transition-2);
+}
+.container .main .component .item-box .time-table .row .data{
+    display: flex;
+    gap: 7px;
+}
+.container .main .component .item-box .time-table .row .data .icon{
+    font-size: 24px;
+    color: #5d5f63;
+}
+.main .component .item-box .time-table .row .data .row-name{
+    color: #434445;
+    font-size: 15px;
+    font-weight: 600;
+}
+.main .component .item-box .time-table .row .data .time{
+    color: var(--gery);
+    font-size: 15px;
+    font-weight: 600;
+}
+.main .component .item-box .time-table .row .select{
+    font-size: 18px;
+    color: var(--dark-grey);
+    cursor: pointer;
+}
+
+/* //////*\\\\\\\\\ */
+@media screen and (max-width: 1090px) {
+    .container .main .component .item-box .head .title{
+        font-size: 15px;
+    }
+    .container .main .component .item-box .head .more,
+    .container .main .component .item-box .head .design{
+        font-size: 12px;
+    }
+    .container .main .component .item-box .audio-course p,
+    .main .component .item-box .time-table .row .data .row-name{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 991px){
+    .container .main{
+        flex-wrap: wrap;
+    }
+    .container .main .component,
+    .container .main .component .item-box, 
+    .container .main .chart-box {
+        width: 100%;
+    }
+    .container .main .component .item-box{
+        width: 49%;
+    }
+}
+@media screen and (max-width: 883px){
+    header .content {
+        flex-wrap: wrap;
+    }
+    .static .box:nth-child(4) .head .title,
+    .container .main .component .item-box .head .title, 
+    .static .box .head .title {
+        font-size: 15px;
+    }
+    .static{
+        flex-wrap: wrap;
+    }
+    .static .box{
+        width: 48%;
+    }
+}
+@media screen and (max-width: 500px){
+    .container .main .component{
+        flex-direction: column;
+    }
+    .container .main .component .item-box{
+        width: 100%;
+    }
+    header .content{
+        justify-content: center;
+    }
+    header .content .controlls{
+        display: none;
+    }
+    .main .chart-box .main-progress .progress-top .avrage .av-value, 
+    .container .main .chart-box .header h2{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .static .box{
+        width: 100%;
+    }
+    .static{
+        flex-direction: column
+    }
+};

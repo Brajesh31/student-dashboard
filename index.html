@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <title>Study Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-area">
+        <header>
+          <div class="content">
+            <div class="logo">
+              <a href="#">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>KASAKA</span>
+              </a>
+            </div>
+            <ul class="menu">
+              <li class="link active"><a href="#">Overview</a></li>
+              <li class="link"><a href="#">Progress</a></li>
+              <li class="link"><a href="#">Allcourses</a></li>
+              <li class="link"><a href="#">Settings</a></li>
+            </ul>
+            <div class="controlls">
+              <span class="icon"><i class="fa-solid fa-bell"></i></span>
+              <span class="icon"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></span>
+              <div class="profile">
+                <img src="./profile.jpg" alt="profile" />
+                <div class="pro-info">
+                  <div class="info">
+                    <p class="name">Bella Wilson</p>
+                    <p class="study-position">Middle UX/UI Designer</p>
+                  </div>
+                  <span><i class="fa-solid fa-angle-down"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="static">
+          <div class="box">
+            <div class="head">
+              <h3 class="title">Web Devolpment</h3>
+              <span class="icon"><i class="fa-solid fa-laptop"></i></span>
+            </div>
+            <ul class="items">
+              <li class="item">2 modules left</li>
+              <li class="item">2 videos left</li>
+            </ul>
+            <div class="progress">
+              <span class="value">87%</span>
+              <div class="bar" >
+                <div
+                  class="thumb"
+                  aria-valuenow="87"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="web devolpment"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="head">
+              <h3 class="title">Motion Design</h3>
+              <span class="icon"><i class="fa-solid fa-video"></i></span>
+            </div>
+            <ul class="items">
+              <li class="item">1 practic left</li>
+              <li class="item">4 audio left</li>
+            </ul>
+            <div class="progress">
+              <span class="value">48%</span>
+              <div class="bar" >
+                <div
+                  class="thumb"
+                  aria-valuenow="48"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="motion design"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="head">
+              <h3 class="title">English: Level C1</h3>
+              <span class="icon"><i class="fa-solid fa-folder-open"></i></span>
+            </div>
+            <ul class="items">
+              <li class="item">2 intensives left</li>
+              <li class="item">16 modules left</li>
+            </ul>
+            <div class="progress">
+              <span class="value">73%</span>
+              <div class="bar" >
+                <div
+                  class="thumb"
+                  aria-valuenow="73"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="English: Level C1"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="head">
+              <h3 class="title">Activity this week</h3>
+            </div>
+            <canvas id="ctx"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="chart-box">
+          <div class="header">
+                <h2>Your progress</h2>
+                <ul class="time-menu">
+                <li class="time-link">
+                    <a href="#">1Y</a>
+                </li>
+                <li class="time-link">
+                    <a href="#">6M</a>
+                </li>
+                <li class="time-link">
+                    <a href="#">3M</a>
+                </li>
+                </ul>
+          </div>
+          <div class="main-progress">
+            <div class="progress-top">
+                <div class="avrage">
+                    <h2 class="av-value">2.53</h2>
+                    <p class="av-name">Aver.grade</p>
+                </div>
+                <div class="avrage">
+                    <h2 class="av-value">3.02</h2>
+                    <p class="av-name">Aver.grade in the class</p>
+                </div>
+            </div>
+            <div class="progress-down">
+                <canvas id="ctx2"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="component">
+            <div class="item-box">
+                <div class="top">
+                    <div class="head">
+                        <h3 class="title">You might like it</h3>
+                        <span class="design"># Design</span>
+                    </div>
+                    <div class="audio-course">
+                        <div class="info">
+                            <img src="./listen.jpg" alt="audio img">
+                            <div class="details">
+                                <span class="icon"><i class="fa-solid fa-podcast"></i></span>
+                                <p>Audio course, The Art of Visual Storytelling</p>
+                            </div>
+                            <p>The Compositional Toolbok. Techniques for Crafting Engaging Designs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="enroll">
+                    <div class="imgs">
+                        <img src="./team1-1.jpg" alt="img">
+                        <img src="./team1-2.jpg" alt="img">
+                        <img src="./team1-3.jpg" alt="img">
+                    </div>
+                    <button>
+                        Enroll <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+            <div class="item-box">
+                <div class="top">
+                    <div class="head">
+                        <h3 class="title">Uncoming</h3>
+                        <span class="more">
+                            January
+                            <i class="fa-solid fa-angle-down"></i>
+                        </span>
+                    </div>
+                    <div class="calender">
+                        <div class="col">
+                            <span class="day-name">Mo</span>
+                            <span class="day">12</span>
+                        </div>
+                        <div class="col">
+                            <span class="day-name">Tu</span>
+                            <span class="day active">13</span>
+                        </div>
+                        <div class="col">
+                            <span class="day-name">We</span>
+                            <span class="day">14</span>
+                        </div>
+                        <div class="col">
+                            <span class="day-name">Th</span>
+                            <span class="day">15</span>
+                        </div>
+                        <div class="col">
+                            <span class="day-name">Fr</span>
+                            <span class="day">16</span>
+                        </div>
+                        <div class="col">
+                            <span class="day-name">Sa</span>
+                            <span class="day">17</span>
+                        </div>
+                        <div class="col">
+                            <span class="day-name">Su</span>
+                            <span class="day">18</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="time-table">
+                    <div class="row">
+                        <div class="data">
+                            <span class="icon"><i class="fa-regular fa-clock"></i></span>
+                            <div class="row-info">
+                                <p class="row-name">Abstract in one tone</p>
+                                <p class="time">8:30-10:00</p>
+                            </div>
+                        </div>
+                        <span class="select"><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                    <div class="row">
+                        <div class="data">
+                            <span class="icon"><i class="fa-regular fa-clock"></i></span>
+                            <div class="row-info">
+                                <p class="row-name">Programming in Java</p>
+                                <p class="time">10:30-12:00</p>
+                            </div>
+                        </div>
+                        <span class="select"><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                    <div class="row">
+                        <div class="data">
+                            <span class="icon"><i class="fa-regular fa-clock"></i></span>
+                            <div class="row-info">
+                                <p class="row-name">The strategy of Marketing</p>
+                                <p class="time">1:00-2:25</p>
+                            </div>
+                        </div>
+                        <span class="select"><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                    <div class="row">
+                        <div class="data">
+                            <span class="icon"><i class="fa-regular fa-clock"></i></span>
+                            <div class="row-info">
+                                <p class="row-name">7 visual elements of design</p>
+                                <p class="time">8:30-10:00</p>
+                            </div>
+                        </div>
+                        <span class="select"><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
